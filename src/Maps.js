@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity,Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import * as Location from "expo-location";
@@ -43,6 +43,8 @@ const Tracking = ({ navigation }) => {
       >
         <Marker coordinate={pin} draggable={true}></Marker>
       </MapView>
+
+     
     </View>
   );
 };
@@ -50,7 +52,7 @@ const Tracking = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: "85%",
+    height: "75%",
     width: "100%",
     alignItems: "center",
     marginTop: 25,

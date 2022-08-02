@@ -6,8 +6,8 @@ import {
   Text,
   ScrollView,
 } from "react-native";
-import { RNCarousel } from "react-native-carousel-cards";
-import React from "react";
+import { ChevronDownIcon, UserCircleIcon } from "react-native-heroicons/outline";
+import React, { useState } from "react";
 import location from "../assets/location.png";
 import Restaurent from "./Restaurent";
 import Coursel from "./coursel";
@@ -66,13 +66,29 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate("maps")}>
+        <TouchableOpacity onPress={() => navigation.navigate("maps")} activeOpacity={0.8}>
           <Image style={styles.tinyLogo} source={location} />
+          <Text style={{ marginLeft: 55, marginTop: 13, fontSize: 20 }}>
+            current Location{" "}
+            <ChevronDownIcon style={{ color: "black" }} size={15} />
+          </Text>
+          <Text style={{ paddingLeft: 60 }}>Kukatpally,Hyderabad</Text>
         </TouchableOpacity>
-        <View>
-          <Text style={styles.location}>Location</Text>
-        </View>
+        <TouchableOpacity
+          style={{
+            position: "relative",
+            marginLeft: "auto",
+            marginRight: 15,
+            top: "-28%",
+          }}
+          activeOpacity={0.8}
+          onPress={()=>navigation.navigate("user")}
+        >
+          <UserCircleIcon color="black" size={35} />
+         
+        </TouchableOpacity>
       </View>
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         vertical={true}
@@ -96,6 +112,7 @@ const HomeScreen = ({ navigation }) => {
                 <TouchableOpacity
                   key={Id}
                   onPress={() => navigation.navigate("rest")}
+                  activeOpacity={0.8}
                 >
                   <Image
                     style={styles.tinyLogo2}
@@ -109,29 +126,27 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <Text style={{ fontSize: 20, paddingLeft: 10 }}>Check This Out</Text>
-        <TouchableOpacity>
-          <View style={{ marginLeft: 10, marginRight: 10 }}>
+        <TouchableOpacity   activeOpacity={0.8}>
+          <View style={{ marginLeft: 20, marginRight: 20 }}>
             <Image
               source={{
                 uri: "https://images.takecdn.com/Cdn/production/Images/73354d68-6955-4780-9da9-d57dd936f059.jpg",
               }}
               style={{
                 width: "100%",
-                height: 200,
+                height: 150,
                 marginTop: 8,
                 borderRadius: 20,
               }}
             />
           </View>
         </TouchableOpacity>
+
         <Text style={{ paddingLeft: 10, fontSize: 20, marginTop: 10 }}>
           In the spotlight
         </Text>
-       
 
-        <View>
-         {<Coursel/>}
-        </View>
+        <View>{<Coursel />}</View>
         <View>
           <Text style={{ paddingLeft: 10, fontSize: 20, marginTop: 20 }}>
             All restaurants around you
@@ -170,8 +185,8 @@ const styles = StyleSheet.create({
     marginLeft: 50,
   },
   tinyLogo2: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     borderWidth: 1,
     borderRadius: 50,
     marginLeft: 10,
@@ -182,6 +197,13 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderWidth: 1,
     borderRadius: 20,
+  },
+  backgroundVideo: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
 

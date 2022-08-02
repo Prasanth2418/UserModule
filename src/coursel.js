@@ -74,7 +74,7 @@ const Coursel = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+    
       <Carousel
         pagination={PaginationLight}
         renderItem={renderItem}
@@ -82,7 +82,7 @@ const Coursel = () => {
         loop
         autoplay
       />
-      </TouchableOpacity>
+     
     </View>
   );
 };
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  
   },
   cardContainer: {
     alignItems: "center",
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   card: {
-    width: 390,
+    width: width*0.9,
     height: width * 0.5,
   },
   cornerLabel: {

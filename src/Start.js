@@ -5,7 +5,7 @@ import {
   Image,
   AppRegistry,
   TouchableOpacity,
-  PermissionsAndroid,
+ 
    
 } from "react-native";
 import React from "react";
@@ -37,6 +37,7 @@ const Start = ({ navigation }) => {
         and pasta.
       </Text>
       <TouchableOpacity
+        activeOpacity={0.8}
         style={{ alignSelf: "center" }}
      onPress={()=>navigation.navigate("Login")}
       >
@@ -68,10 +69,11 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius:150
   },
   tinyLogo: {
-    width: 400,
-    height: 440,
+    width: 330,
+    height: 400,
     alignSelf: "center",
     marginVertical: "8%",
+   
   },
 });
 

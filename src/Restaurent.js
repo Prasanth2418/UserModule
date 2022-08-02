@@ -25,7 +25,7 @@ const Restaurent = ({ navigation }) => {
   const showData = ({ item }) => {
     return (
       <View key={item.restaurantProfile.restaurantProfileId}>
-        <TouchableOpacity>
+        <TouchableOpacity   activeOpacity={0.8}>
           <View style={[styles.card, styles.shadowProp]}>
             <Image
               source={{ uri: item.restaurantProfile.imageUrl }}

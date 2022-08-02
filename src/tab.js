@@ -4,16 +4,14 @@ import {
   createBottomTabNavigator,
  
 } from "@react-navigation/bottom-tabs";
-import delivery from "../assets/delivery.png";
-import Search from "../assets/search.png";
-import profile from "../assets/profile.png";
-import basket from "../assets/basket.png";
 
+import {  CashIcon,ShoppingBagIcon,SearchIcon,HomeIcon } from "react-native-heroicons/outline";
 
 import User from "./User"
 import HomeScreen from "../src/HomeScreen";
 import bar from "./Search"
 import cart from "./Cart"
+import Wallet from "./wallet";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,26 +20,22 @@ const Tabs = () => {
     <Tab.Navigator
       screenOptions={{
        headerShown:false,
-       tabBarShowLabel:false,
+     
         tabBarStyle: {
           backgroundColor: "trasparent",
           borderTopWidth: 0,
           elevation: 0,
-          marginBottom:3
+          marginBottom:10
         },
       }}
      
     >
       <Tab.Screen
-        name="Delivery"
+        name="Home"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              resizeMode="contain"
-              style={{ height: 35, width: 50 }}
-              source={delivery}
-            />
+            <HomeIcon color="black" size={30}/>
           ),
           
         }}
@@ -51,11 +45,7 @@ const Tabs = () => {
         component={bar}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              resizeMode="contain"
-              style={{ height: 30, width: 30 }}
-              source={Search}
-            />
+          <SearchIcon color="black" size={30}/>
           ),
          
         }}
@@ -65,25 +55,17 @@ const Tabs = () => {
         component={cart}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              resizeMode="contain"
-              style={{ height: 30, width: 30 }}
-              source={basket}
-            />
+          <ShoppingBagIcon color="black" size={30}/>
           ),
         
         }}
       ></Tab.Screen>
       <Tab.Screen
-        name="Profile"
-        component={User}
+        name="Wallet & cards"
+        component={Wallet}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              resizeMode="contain"
-              style={{ height: 30, width: 30 }}
-              source={profile}
-            />
+            <CashIcon color="black" size={30}/>
           ),
           
         }}

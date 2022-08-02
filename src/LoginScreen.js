@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import Chicken1 from "../assets/Chicken1.png";
-import Call from "../assets/call.png";
+import { PhoneIcon } from "react-native-heroicons/solid";
 
 const LoginScreen = ({ navigation }) => {
   const [text, onChangeText] = useState();
@@ -35,7 +35,7 @@ const LoginScreen = ({ navigation }) => {
   const createAlert = () =>
     Alert.alert(
       
-      "You are Enable to Reset your password! Please Contact admin?",
+      "You are Enable to Reset your password? Please Contact admin!",
       " support@infoeat.com",
       
       [
@@ -74,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
           placeholder="Enter your password"
          secureTextEntry={true}
         />
-        <TouchableOpacity onPress={createAlert}>
+        <TouchableOpacity onPress={createAlert}   activeOpacity={0.8}>
           <Text
             style={{
               textAlign: "right",
@@ -86,15 +86,15 @@ const LoginScreen = ({ navigation }) => {
             Forgot password?
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={Login}>
-          <Text style={styles.button}>Login →</Text>
+        <TouchableOpacity onPress={Login}   activeOpacity={0.8}>
+          <Text style={styles.button} >Login →</Text>
         </TouchableOpacity>
       </View>
       <Text style={{ textAlign: "center", marginTop: 15 }}>
-        Don't Have an account please contact admin?
+        Don't Have an account? please contact admin!
       </Text>
-      <TouchableOpacity onPress={makeCall}>
-        <Image style={styles.tinyLogo2} source={Call} />
+      <TouchableOpacity onPress={makeCall}   activeOpacity={0.8}>
+        <PhoneIcon color="orange" size={25} style={{alignSelf:"center",marginTop:10}}/>
       </TouchableOpacity>
     </View>
   );
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   tinyLogo: {
-    width: 350,
+    width: 340,
     height: 300,
     alignSelf: "center",
   },
