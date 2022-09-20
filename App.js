@@ -8,6 +8,8 @@ import Tabs from "./src/tab";
 import Restaurent from "./src/Restaurent";
 import Menu from "./src/Menu";
 import User from "./src/User";
+import Questions from "./src/Questions";
+
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -26,6 +28,7 @@ export default function App() {
           <Stack.Screen name="rest" component={Restaurent} />
           <Stack.Screen name="menu" component={Menu} />
           <Stack.Screen name="user" component={User} />
+          <Stack.Screen name="Questions" component={Questions} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
