@@ -7,7 +7,7 @@ import {
   Image,
   Linking,
   Platform,
-  Alert
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
 import Chicken1 from "../assets/Chicken1.png";
@@ -20,7 +20,6 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate("tabs");
   };
 
-
   const makeCall = () => {
     let phoneNumber = "";
     if (Platform.OS === "android") {
@@ -31,31 +30,40 @@ const LoginScreen = ({ navigation }) => {
     Linking.openURL(phoneNumber);
   };
 
-
   const createAlert = () =>
     Alert.alert(
-      
       "You are Enable to Reset your password? Please Contact admin!",
       " support@infoeat.com",
-      
+
       [
         {
           text: "Cancel",
           // onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
+          style: "cancel",
         },
-        { text: "Ok"}
+        { text: "Ok" },
       ]
     );
 
   return (
-    <View >
+    <View>
       <View style={styles.MainContainer}>
         <Text style={styles.container}>InfoEat</Text>
         <Text style={styles.container2}>
           welcome! Please login your account.
         </Text>
-        <Image style={styles.tinyLogo} source={Chicken1} />
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: "https://media3.giphy.com/media/cMPFORcCgdAjPGL4Fw/giphy.gif?cid=ecf05e471402xg0ua150r2soq9lzapnv8l9lyw0l0c7azsfm&rid=giphy.gif&ct=s",
+          }}
+        />
+         <Image
+          style={styles.tinyLogo3}
+          source={{
+            uri: "https://media3.giphy.com/media/eNvU27YpS3f7zyAvo6/giphy.gif?cid=ecf05e47bcwpgfej6th6vawlonipboy2b3fwv2u5h3ycadqu&rid=giphy.gif&ct=s",
+          }}
+        />
       </View>
 
       <View style={{ marginTop: 20 }}>
@@ -72,9 +80,9 @@ const LoginScreen = ({ navigation }) => {
           onChangeText={onChangeNumber}
           value={number}
           placeholder="Enter your password"
-         secureTextEntry={true}
+          secureTextEntry={true}
         />
-        <TouchableOpacity onPress={createAlert}   activeOpacity={0.8}>
+        <TouchableOpacity onPress={createAlert} activeOpacity={0.8}>
           <Text
             style={{
               textAlign: "right",
@@ -86,15 +94,19 @@ const LoginScreen = ({ navigation }) => {
             Forgot password?
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={Login}   activeOpacity={0.8}>
-          <Text style={styles.button} >Login →</Text>
+        <TouchableOpacity onPress={Login} activeOpacity={0.8}>
+          <Text style={styles.button}>Login →</Text>
         </TouchableOpacity>
       </View>
       <Text style={{ textAlign: "center", marginTop: 15 }}>
         Don't Have an account? please contact admin!
       </Text>
-      <TouchableOpacity onPress={makeCall}   activeOpacity={0.8}>
-        <PhoneIcon color="orange" size={25} style={{alignSelf:"center",marginTop:10}}/>
+      <TouchableOpacity onPress={makeCall} activeOpacity={0.8}>
+        <PhoneIcon
+          color="orange"
+          size={25}
+          style={{ alignSelf: "center", marginTop: 10 }}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -137,9 +149,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   tinyLogo: {
-    width: 340,
-    height: 300,
+    width: 120,
+    height: 55,
     alignSelf: "center",
+    // marginTop:20
   },
   tinyLogo2: {
     width: 20,
@@ -147,6 +160,12 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 10,
   },
+  tinyLogo3:{
+    width: 250,
+    height: 250,
+    alignSelf: "center",
+  
+  }
 });
 
 export default LoginScreen;

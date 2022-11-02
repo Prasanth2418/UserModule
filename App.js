@@ -9,6 +9,7 @@ import Restaurent from "./src/Restaurent";
 import Menu from "./src/Menu";
 import User from "./src/User";
 import Questions from "./src/Questions";
+import Profile from "./src/Profile";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Stack.Screen name="menu" component={Menu} />
           <Stack.Screen name="user" component={User} />
           <Stack.Screen name="Questions" component={Questions} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

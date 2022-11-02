@@ -1,4 +1,11 @@
-import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import Carousel, { PaginationLight } from "react-native-x-carousel";
 
@@ -74,7 +81,6 @@ const Coursel = () => {
 
   return (
     <View style={styles.container}>
-    
       <Carousel
         pagination={PaginationLight}
         renderItem={renderItem}
@@ -82,7 +88,6 @@ const Coursel = () => {
         loop
         autoplay
       />
-     
     </View>
   );
 };
@@ -92,7 +97,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  
   },
   cardContainer: {
     alignItems: "center",
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   card: {
-    width: width*0.9,
+    width: width * 0.9,
     height: width * 0.5,
   },
   cornerLabel: {

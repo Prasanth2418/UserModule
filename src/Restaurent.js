@@ -13,30 +13,34 @@ import React, { useEffect, useState } from "react";
 const Restaurent = ({ navigation }) => {
   const [data, setData] = useState({});
 
-  useEffect(() => {
-    fetch(
-      "http://backend10.azurewebsites.net/infovision/homepage?location=Hyderabad"
-    )
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error));
-  }, []);
+  const getMovies = async () => {
+    return fetch('')
+    .then((response) => response.json())
+    .then((json) => {
+      setData(json);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+ }
+
+ useEffect(() => {
+   getMovies();
+ }, []);
 
   const showData = ({ item }) => {
     return (
-      <View key={item.restaurantProfile.restaurantProfileId}>
+      <View key={item.id}>
         <TouchableOpacity   activeOpacity={0.8}>
           <View style={[styles.card, styles.shadowProp]}>
             <Image
-              source={{ uri: item.restaurantProfile.imageUrl }}
+              source={{ uri:item.image }}
               style={styles.resto}
             />
             <Text style={styles.name}>
-              {item.restaurantProfile.restaurantName}
+              {item.title}
             </Text>
-            <Text style={{ paddingLeft: 10, fontWeight: "400" }}>
-              Biryani,chinese,North india
-            </Text>
+           
             <Badge
               value="4.3☆"
               status="success"

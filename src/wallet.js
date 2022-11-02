@@ -5,7 +5,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { CashIcon } from "react-native-heroicons/solid";import CreditCardDisplay from "react-native-credit-card-display";
+import { CashIcon } from "react-native-heroicons/solid";
+import CreditCardDisplay from "react-native-credit-card-display";
 import { TrashIcon } from "react-native-heroicons/outline";
 import React from "react";
 

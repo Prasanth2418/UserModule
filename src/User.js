@@ -34,10 +34,10 @@ const User = ({navigation}) => {
           <Text
             style={{ position: "relative", top: 45, color: "red", left: 1 }}
           >
-            View activity <ArrowRightIcon color="red" size={10} />
+            View profile <ArrowRightIcon color="red" size={10} />
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8}>
+        <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate("Profile")}>
           <Image
             source={{
               uri: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",

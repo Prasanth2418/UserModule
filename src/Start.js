@@ -5,22 +5,22 @@ import {
   Image,
   AppRegistry,
   TouchableOpacity,
- 
-   
 } from "react-native";
 import React from "react";
 import Logo from "../assets/Logo.png";
 
 AppRegistry.registerComponent("AndroidFonts", () => AndroidFonts);
 
-
-
-
 const Start = ({ navigation }) => {
   return (
     <View>
       <View style={styles.MainContainer}>
-        <Image style={styles.tinyLogo} source={Logo} />
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Foods_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif",
+          }}
+        />
       </View>
       <Text style={{ textAlign: "center", fontSize: 25, marginTop: 20 }}>
         Welcome To InfoEat
@@ -39,7 +39,7 @@ const Start = ({ navigation }) => {
       <TouchableOpacity
         activeOpacity={0.8}
         style={{ alignSelf: "center" }}
-     onPress={()=>navigation.navigate("Login")}
+        onPress={() => navigation.navigate("Login")}
       >
         <Text
           style={{
@@ -65,15 +65,14 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     backgroundColor: "orange",
-    borderBottomRightRadius:150,
-    borderBottomLeftRadius:150
+    borderBottomRightRadius: 150,
+    borderBottomLeftRadius: 150,
   },
   tinyLogo: {
     width: 330,
     height: 400,
     alignSelf: "center",
     marginVertical: "8%",
-   
   },
 });
 
