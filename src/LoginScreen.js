@@ -10,7 +10,7 @@ import {
   Alert,
 } from "react-native";
 import React, { useState } from "react";
-import Chicken1 from "../assets/Chicken1.png";
+// import Chicken1 from "../assets/Chicken1.png";
 import { PhoneIcon } from "react-native-heroicons/solid";
 
 const LoginScreen = ({ navigation }) => {
@@ -22,8 +22,9 @@ const LoginScreen = ({ navigation }) => {
 
   const makeCall = () => {
     let phoneNumber = "";
+    let number=9347128304
     if (Platform.OS === "android") {
-      phoneNumber = "tel:${9347128304}";
+      phoneNumber = `tel:${number}`;
     } else {
       phoneNumber = "telprompt:${1234567890}";
     }
